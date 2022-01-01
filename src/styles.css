@@ -1,0 +1,70 @@
+.whole {
+  border: 1px solid #8e9bff;
+  padding: 20px;
+  margin: 130px;
+  border-radius: 14px;
+  background-size: cover;
+  background-image: url("https://www.teahub.io/photos/full/288-2883965_live-rain-wallpaper-climate-and-weather-background.jpg");
+}
+h1 {
+  text-align: center;
+  color: rgb(19, 102, 255);
+  font-family: fantasy;
+}
+
+#search-form {
+  text-align: center;
+}
+#click-search {
+  border: solid rgb(19, 102, 255) 1px;
+  border-radius: 4px;
+  background-color: rgb(73, 154, 247);
+  color: white;
+  padding-left: 18px;
+  padding-right: 18px;
+}
+#current-search {
+  border: solid rgb(19, 227, 255) 1px;
+  border-radius: 4px;
+  background-color: rgba(34, 139, 20, 0.767);
+  color: white;
+  padding-left: 18px;
+  padding-right: 18px;
+}
+#enter-city {
+  border: solid rgb(19, 102, 255) 1px;
+  border-radius: 4px;
+  text-align: center;
+}
+.row {
+  text-align: center;
+}
+
+.first {
+  list-style: none;
+  padding: 20px;
+}
+
+.second {
+  list-style: none;
+  padding: 20px;
+}
+
+.container1 {
+  border: 1px solid #8e9bff;
+  margin-top: 20px;
+  border-radius: 14px;
+  background-color: white;
+}
+
+.third {
+  list-style: none;
+  padding: 20px;
+}
+.four {
+  list-style: none;
+  padding: 20px;
+}
+a {
+  text-decoration: none;
+}
