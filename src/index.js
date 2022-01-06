@@ -39,6 +39,7 @@ function showWeather(response) {
   document.querySelector("#Humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#description").innerHTML =
     response.data.weather[0].main;
+    celsiusTemperature = response.data.main.temp;
 }
 function esmeshahr(event) {
   event.preventDefault();
@@ -49,5 +50,21 @@ function esmeshahr(event) {
   axios.get(apiUrl).then(showWeather);
 }
 
+function displayFarenhideTepmerature (event){
+  event.preventDefault();
+let farenhideTepmerature = (celsiusTemperature*9 )/5 +32;
+farenhideTepmerature.innerHTML= Math.random(farenhideTepmerature);
+}
+
+
+let celsiusTemperaturec= null;
+
+
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", esmeshahr);
+
+
+
+let farenhideLink = document.querySelector("#farenhide");
+farenhideLink.addEventListener("click", displayFarenhideTepmerature);
+
