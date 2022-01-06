@@ -57,7 +57,12 @@ farenhideTepmerature.innerHTML= Math.random(farenhideTepmerature);
 }
 
 
-let celsiusTemperaturec= null;
+function displaycelsiousTepmerature (event){
+  event.preventDefault();
+  let tepmElement = document.querySelector ("dama");
+  tepmElement.innerHTML = math.round(celsiusTemperature);
+}
+let celsiusTemperature= null;
 
 
 let form = document.querySelector("#search-form");
@@ -68,3 +73,5 @@ form.addEventListener("submit", esmeshahr);
 let farenhideLink = document.querySelector("#farenhide");
 farenhideLink.addEventListener("click", displayFarenhideTepmerature);
 
+let celciousLink = document.querySelector("#celcious");
+celciousLink.addEventListener("click",displaycelsiousTepmerature);
