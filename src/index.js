@@ -26,6 +26,9 @@ let day = days[now.getDay()];
 saat.innerHTML = `${day} , ${hours}:${minutes}`;
 
 function showWeather(response) {
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute("src", response.data.weather[0],description);
+  iconElement.setAttribute("alt", response.data.weather[0].description)
   document.querySelector("#town").innerHTML = response.data.name;
   document.querySelector("#damaa").innerHTML = Math.round(
     response.data.main.temp
