@@ -52,8 +52,9 @@ function esmeshahr(event) {
 
 function displayFarenhideTepmerature (event){
   event.preventDefault();
+  let tepmElement = document.querySelector("#dama");
 let farenhideTepmerature = (celsiusTemperature*9 )/5 +32;
-farenhideTepmerature.innerHTML= Math.random(farenhideTepmerature);
+tepmElement.innerHTML= Math.random(farenhideTepmerature);
 }
 
 
@@ -62,6 +63,7 @@ function displaycelsiousTepmerature (event){
   let tepmElement = document.querySelector ("dama");
   tepmElement.innerHTML = math.round(celsiusTemperature);
 }
+
 let celsiusTemperature= null;
 
 
