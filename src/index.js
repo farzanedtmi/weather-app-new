@@ -45,6 +45,9 @@ function esmeshahr(event) {
   axios.get(apiUrl).then(showWeather);
 }
 
+
+
+
 function displayFarenhideTepmerature (event){
   event.preventDefault();
   let tepmElement = document.querySelector("#damaa");
@@ -55,8 +58,8 @@ tepmElement.innerHTML= Math.round(farenhideTepmerature);
 
 function displaycelsiousTepmerature (event){
   event.preventDefault();
-  let tepmElement = document.querySelector ("#damaa");
-  tepmElement.innerHTML = math.round(celsiusTemperature );
+  let tepmElement2 = document.querySelector ("#damaa");
+  tepmElement2.innerHTML = math.round(celsiusTemperature );
 }
 
 let celsiusTemperature = null;
@@ -64,7 +67,6 @@ let celsiusTemperature = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", esmeshahr);
-
 
 
 let farenhideLink = document.querySelector("#farenhide");
