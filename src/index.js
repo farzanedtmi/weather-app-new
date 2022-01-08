@@ -34,7 +34,7 @@ function showWeather(response) {
   document.querySelector("#Wind").innerHTML = Math.round(response.data.wind.speed);
   document.querySelector("#Humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#description").innerHTML = response.data.weather[0].main;
-    celsiusTemperature = response.data.main.temp;
+  celsiusTemperature = response.data.main.temp;
 }
 function esmeshahr(event) {
   event.preventDefault();
@@ -56,7 +56,7 @@ tepmElement.innerHTML= Math.round(farenhideTepmerature);
 function displaycelsiousTepmerature (event){
   event.preventDefault();
   let tepmElement = document.querySelector ("#damaa");
-  tepmElement.innerHTML = math.round(cresponse.data.main.temp);
+  tepmElement.innerHTML = math.round(response.data.main.temp);
 }
 
 let celsiusTemperature= null;
