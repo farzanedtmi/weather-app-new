@@ -25,16 +25,19 @@ let day = days[now.getDay()];
 
 saat.innerHTML = `${day} , ${hours}:${minutes}`;
 
-function showWeather(response) {
+function displayTemperature (response) {
+
   let iconElement = document.querySelector("#icon");
-  iconElement.setAttribute("src", response.data.weather[0].description);
-  iconElement.setAttribute("alt", response.data.weather[0].description)
+  celsiusTemperature = response.data.main.temp;
+
+  iconElement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+ iconElement.setAttribute("alt", response.data.weather[0].description);
   document.querySelector("#town").innerHTML = response.data.name;
-  document.querySelector("#damaa").innerHTML = Math.round(response.data.main.temp);
+  document.querySelector("#damaa").innerHTML = Math.round(celsiusTemperature);
   document.querySelector("#Wind").innerHTML = Math.round(response.data.wind.speed);
   document.querySelector("#Humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#description").innerHTML = response.data.weather[0].main;
-  celsiusTemperature = response.data.main.temp;
+  
 }
 function esmeshahr(event) {
   event.preventDefault();
@@ -42,7 +45,9 @@ function esmeshahr(event) {
   let units = "metric";
   let city = document.querySelector("#enter-city").value;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
-  axios.get(apiUrl).then(showWeather);
+
+    axios.get(apiUrl).then(displayTemperature);
+
 }
 
 
@@ -50,6 +55,8 @@ function esmeshahr(event) {
 
 function displayFarenhideTepmerature (event){
   event.preventDefault();
+   celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
   let tepmElement = document.querySelector("#damaa");
 let farenhideTepmerature = (celsiusTemperature*9 )/5 +32;
 tepmElement.innerHTML= Math.round(farenhideTepmerature);
@@ -58,6 +65,8 @@ tepmElement.innerHTML= Math.round(farenhideTepmerature);
 
 function displaycelsiousTepmerature (event){
   event.preventDefault();
+   celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
   let tepmElement2 = document.querySelector ("#damaa");
   tepmElement2.innerHTML = math.round(celsiusTemperature );
 }
@@ -69,8 +78,12 @@ let form = document.querySelector("#search-form");
 form.addEventListener("submit", esmeshahr);
 
 
-let farenhideLink = document.querySelector("#farenhide");
-farenhideLink.addEventListener("click", displayFarenhideTepmerature);
 
-let celciousLink = document.querySelector("#celcious");
-celciousLink.addEventListener("click", displaycelsiousTepmerature);
+let fahrenheitLink = document.querySelector("#farenhide");
+fahrenheitLink.addEventListener("click", displayFarenhideTepmerature);
+
+let celsiusLink = document.querySelector("#celcious");
+celsiusLink.addEventListener("click", displaycelsiousTepmerature);
+
+
+esmeshahr (Hamedan);
