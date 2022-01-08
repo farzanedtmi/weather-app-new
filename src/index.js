@@ -56,10 +56,10 @@ tepmElement.innerHTML= Math.round(farenhideTepmerature);
 function displaycelsiousTepmerature (event){
   event.preventDefault();
   let tepmElement = document.querySelector ("#damaa");
-  tepmElement.innerHTML = math.round(response.data.main.temp);
+  tepmElement.innerHTML = math.round(celsiusTemperature );
 }
 
-let celsiusTemperature= null;
+let celsiusTemperature = null;
 
 
 let form = document.querySelector("#search-form");
