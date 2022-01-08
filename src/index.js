@@ -27,18 +27,13 @@ saat.innerHTML = `${day} , ${hours}:${minutes}`;
 
 function showWeather(response) {
   let iconElement = document.querySelector("#icon");
-  iconElement.setAttribute("src", response.data.weather[0],description);
+  iconElement.setAttribute("src", response.data.weather[0].description);
   iconElement.setAttribute("alt", response.data.weather[0].description)
   document.querySelector("#town").innerHTML = response.data.name;
-  document.querySelector("#damaa").innerHTML = Math.round(
-    response.data.main.temp
-  );
-  document.querySelector("#Wind").innerHTML = Math.round(
-    response.data.wind.speed
-  );
+  document.querySelector("#damaa").innerHTML = Math.round(response.data.main.temp);
+  document.querySelector("#Wind").innerHTML = Math.round(response.data.wind.speed);
   document.querySelector("#Humidity").innerHTML = response.data.main.humidity;
-  document.querySelector("#description").innerHTML =
-    response.data.weather[0].main;
+  document.querySelector("#description").innerHTML = response.data.weather[0].main;
     celsiusTemperature = response.data.main.temp;
 }
 function esmeshahr(event) {
@@ -54,7 +49,7 @@ function displayFarenhideTepmerature (event){
   event.preventDefault();
   let tepmElement = document.querySelector("#damaa");
 let farenhideTepmerature = (celsiusTemperature*9 )/5 +32;
-tepmElement.innerHTML= Math.random(farenhideTepmerature);
+tepmElement.innerHTML= Math.round(farenhideTepmerature);
 }
 
 
