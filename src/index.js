@@ -55,7 +55,7 @@ tepmElement.innerHTML= Math.round(farenhideTepmerature);
 
 function displaycelsiousTepmerature (event){
   event.preventDefault();
-  let tepmElement = document.querySelector ("damaa");
+  let tepmElement = document.querySelector ("#damaa");
   tepmElement.innerHTML = math.round(celsiusTemperature);
 }
 
@@ -71,4 +71,4 @@ let farenhideLink = document.querySelector("#farenhide");
 farenhideLink.addEventListener("click", displayFarenhideTepmerature);
 
 let celciousLink = document.querySelector("#celcious");
-celciousLink.addEventListener("click",displaycelsiousTepmerature);
+celciousLink.addEventListener("click", displaycelsiousTepmerature);
