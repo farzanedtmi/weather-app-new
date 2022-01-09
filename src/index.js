@@ -68,7 +68,7 @@ function displaycelsiousTepmerature (event){
    celsiusLink.classList.add("active");
   fahrenheitLink.classList.remove("active");
   let tepmElement2 = document.querySelector ("#damaa");
-  tepmElement2.innerHTML = math.round(celsiusTemperature );
+  tepmElement2.innerHTML = Math.round(celsiusTemperature );
 }
 
 let celsiusTemperature = null;
@@ -85,5 +85,4 @@ fahrenheitLink.addEventListener("click", displayFarenhideTepmerature);
 let celsiusLink = document.querySelector("#celcious");
 celsiusLink.addEventListener("click", displaycelsiousTepmerature);
 
-
-esmeshahr (Hamedan);
+esmeshahr (Tokyo);
