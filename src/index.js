@@ -28,6 +28,23 @@ let day = days[now.getDay()];
 saat.innerHTML = `${day} , ${hours}:${minutes}`;
 
 
+
+
+
+function formatDay (timestamp){
+  let date = new Date (timestamp*1000);
+  let day = date.getDay();
+  let days = ["Sun",
+  "Mon",
+  "Tue",
+  "Wed",
+  "Thu",
+  "Fri",
+  "Sat"]
+  return days [day];
+}
+
+
 function displayForcast (response) {
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
@@ -46,19 +63,6 @@ function displayForcast (response) {
 `;   } });  
 
 
-
-function formatDay (timestamp){
-  let date = new Date (timestamp*1000);
-  let day = date.getDay();
-  let days = ["Sun",
-  "Mon",
-  "Tue",
-  "Wed",
-  "Thu",
-  "Fri",
-  "Sat"]
-  return days [day];
-}
 
 function getForecast (coordinates) {
 
@@ -130,4 +134,4 @@ fahrenheitLink.addEventListener("click", displayFarenhideTepmerature);
 let celsiusLink = document.querySelector("#celcious");
 celsiusLink.addEventListener("click", displaycelsiousTepmerature);
 
-
+};
