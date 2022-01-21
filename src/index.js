@@ -73,7 +73,7 @@ function displayForecast(response) {
         </div>
       </div>
   `;
-  axios.get(apiUrl).then (displayForecast);
+
     }
   });
 
@@ -106,50 +106,22 @@ function displayTemperature (response) {
 }
 
 
-function esmeshahr(event) {
-  event.preventDefault();
+function search(city) {
   let apiKey = "0b121fa36f264f094fd0196401db2f00";
-  let units = "metric";
-  let city = document.querySelector("#enter-city").value;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
-
-    axios.get(apiUrl).then(displayTemperature);
-
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayTemperature);
 }
 
 
-
-
-function displayFarenhideTepmerature (event){
+function handleSubmit(event) {
   event.preventDefault();
-   celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-  let tepmElement = document.querySelector("#damaa");
-let farenhideTepmerature = (celsiusTemperature*9 )/5 +32;
-tepmElement.innerHTML= Math.round(farenhideTepmerature);
-}
-
-
-function displaycelsiousTepmerature (event){
-  event.preventDefault();
-   celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-  let tepmElement2 = document.querySelector ("#damaa");
-  tepmElement2.innerHTML = Math.round(celsiusTemperature );
+  let cityInputElement = document.querySelector("#enter-city");
+  search(cityInputElement.value);
 }
 
 let celsiusTemperature = null;
 
-
 let form = document.querySelector("#search-form");
-form.addEventListener("submit", esmeshahr);
+form.addEventListener("submit", handleSubmit);
 
-
-
-let fahrenheitLink = document.querySelector("#farenhide");
-fahrenheitLink.addEventListener("click", displayFarenhideTepmerature);
-
-let celsiusLink = document.querySelector("#celcious");
-celsiusLink.addEventListener("click", displaycelsiousTepmerature);
-
-;
+search ("Tokyo");

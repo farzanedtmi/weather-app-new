@@ -78,3 +78,12 @@ a {
 .container2 {
   aspect-ratio: 100px;
 }
+#forecast {
+  border: 1px solid #8e9bff;
+  margin-top: 20px;
+  border-radius: 14px;
+  background-color: white;
+}
+.weather-forecast-temperature-min {
+  color: gray;
+}
